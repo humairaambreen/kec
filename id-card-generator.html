@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card - KEC</title>
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="home">
+        <div class="box">
+            <div class="logo">KEC</div>
+        </div>
+        <div class="box">
+            <div class="menu-div"><a href="index.html" style="text-decoration: none; color: inherit;">Menu</a></div>
+        </div>
+    </div>
+    
+
+    <!-- ID Card Generator Section -->
+    <div class="about-box">
+        <div class="section">
+            <h1 class="title">ID Card Generator</h1>
+            <p class="description">
+                Create a professional ID card for Krishna Engineering College. Fill in the form below and generate your card.
+            </p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="section">
+            <form id="id-card-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Enter Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="branch">Branch:</label>
+                    <select id="branch" required>
+                        <option value="">Select Branch</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Computer Science">Computer Science</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="batch-year">Batch Year:</label>
+                    <select id="batch-year" required>
+                        <option value="">Select Batch Year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth (D.O.B):</label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="profile-picture">Profile Picture:</label>
+                    <input type="file" id="profile-picture" accept="image/*" required>
+                </div>
+                <button type="button" id="generate-btn">Generate ID Card</button>
+            </form>
+        </div>
+
+        <!-- ID Card Preview -->
+        <div id="id-card-container" class="id-card hidden">
+            <div id="id-card">
+                <div class="id-card-header">
+                    <h2>Krishna Engineering College</h2>
+                </div>
+                <div class="id-card-body">
+                    <div class="profile">
+                        <img id="card-image" src="" alt="Profile Picture">
+                    </div>
+                    <div class="details">
+                        <p id="card-name"><strong>Name:</strong> [Name]</p>
+                        <p id="card-branch"><strong>Branch:</strong> [Branch]</p>
+                        <p id="card-batch"><strong>Batch Year:</strong> [Batch Year]</p>
+                        <p id="card-dob"><strong>D.O.B:</strong> [D.O.B]</p>
+                    </div>
+                </div>
+            </div>
+            <button id="download-btn" class="download-btn">Download ID Card</button>
+        </div>
+    </div>
+
+    <!-- GSAP Animation & HTML to PNG Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.9/html-to-image.min.js"></script>
+    <script src="idcard.js"></script>
+</body>
+</html>
